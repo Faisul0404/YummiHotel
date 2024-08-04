@@ -15,21 +15,16 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
+import { enableScreens } from 'react-native-screens';
+import { NavigationContainer } from '@react-navigation/native';
+import StackNavigator from './src/navigations/StackNavigator';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-
+enableScreens();
 function App() {
   return (
-    <View>
-      <Text> Viduhala </Text>
-    </View>
+   <NavigationContainer>
+      <StackNavigator />
+   </NavigationContainer>
   )
 }
 
