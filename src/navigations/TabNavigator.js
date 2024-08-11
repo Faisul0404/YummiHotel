@@ -22,6 +22,7 @@ export default function TabNavigator() {
             // marginVertical: 20,
             paddingVertical: 20,
             position: "absolute",
+            backgroundColor: '#DAD4B5'
           },
         }}>
           <Tab.Screen 
@@ -30,7 +31,7 @@ export default function TabNavigator() {
           options={{
             tabBarIcon: ({focused}) => {
               return (
-                <Ionicons name={ focused ? "home" : "home-outline"} size={30} color={"black"} />
+                <Ionicons name={ focused ? "home" : "home-outline"} size={30} color={focused ? '#800000' : '#982B1C'} />
               )
             },
           }} 
@@ -41,7 +42,7 @@ export default function TabNavigator() {
             options={{
               tabBarIcon: ({ focused }) => {
                 return (
-                  <Ionicons name={focused ? 'bag-check' : 'bag-check-outline'}size={30} color={"black"}/>
+                  <Ionicons name={focused ? 'bag-check' : 'bag-check-outline'}size={30} color={focused ? '#800000' : '#982B1C'}/>
                 )
               }
             }}
@@ -51,7 +52,7 @@ export default function TabNavigator() {
             component={Notifications}
             options={{
               tabBarIcon: ({ focused }) => {
-                return <Ionicons name={ focused ? 'notifications' : 'notifications-outline'} size={30} color={'black'} />
+                return <Ionicons name={ focused ? 'notifications' : 'notifications-outline'} size={30} color={focused ? '#800000' : '#982B1C'} />
               }
             }}
           />
@@ -60,7 +61,7 @@ export default function TabNavigator() {
             component={About}
             options={{
               tabBarIcon: ({ focused }) => {
-                return <Ionicons name={ focused ? 'person' : 'person-outline'} size={30} color={'black'} />
+                return <Ionicons name={ focused ? 'person' : 'person-outline'} size={30} color={focused ? '#800000' : '#982B1C'} />
               }
             }}
           />
