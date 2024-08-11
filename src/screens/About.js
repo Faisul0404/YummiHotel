@@ -1,12 +1,21 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { Text, View, SafeAreaView, StyleSheet } from 'react-native'
 
-function About() {
+export default function About() {
   return (
-    <View>
-        <Text> About </Text>
-    </View>
+    <SafeAreaView style={{flex:1, backgroundColor: '#F2E8C6'}}>
+          <View style={style.container} >
+            <Text>About</Text>
+          </View>
+   </SafeAreaView>
   )
 }
 
-export default About
+const style = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+
+})
