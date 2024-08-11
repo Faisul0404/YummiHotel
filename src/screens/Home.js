@@ -1,12 +1,26 @@
-import React from 'react'
-import { Text, View } from 'react-native'
+import React, { useState } from 'react';
+import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
-function Home() {
+export default function Home({ navigation }) {
+
+  const [iconColor, setIconColor] = useState("black");
+
   return (
-    <View> 
-        <Text>Home</Text>
-    </View>
+    <SafeAreaView style={{flex:1, backgroundColor: 'gold'}}> 
+        <View >
+         <TouchableOpacity 
+         onPressIn={()=> setIconColor('red')}
+         onPressOut={()=> setIconColor('black')}
+         onPress={()=> navigation.navigate('Welcome')} >
+          <AntDesign name = 'arrowleft' size={30} color={iconColor} />
+         </TouchableOpacity>
+        </View>
+    </SafeAreaView>
   )
 }
 
-export default Home
+
+const style = StyleSheet.create({
+
+})
