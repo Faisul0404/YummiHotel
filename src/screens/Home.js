@@ -9,12 +9,14 @@ export default function Home({ navigation }) {
   return (
     <SafeAreaView style={{flex:1, backgroundColor: 'gold'}}> 
         <View >
-         <TouchableOpacity 
+        <TouchableOpacity 
          onPressIn={()=> setIconColor('red')}
          onPressOut={()=> setIconColor('black')}
          onPress={()=> navigation.navigate('Welcome')} >
           <AntDesign name = 'arrowleft' size={30} color={iconColor} />
-         </TouchableOpacity>
+        </TouchableOpacity>
+
+
         </View>
     </SafeAreaView>
   )
