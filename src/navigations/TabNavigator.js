@@ -13,58 +13,53 @@ const Tab = createBottomTabNavigator();
 
 export default function TabNavigator() {
   return (
-        <Tab.Navigator screenOptions={{
-          headerShown: false,
-          tabBarShowLabel: true,
-          tabBarStyle: {
-            height: 90,
-            borderRadius: 20,
-            // marginVertical: 20,
-            paddingVertical: 20,
-            position: "absolute",
-            backgroundColor: '#DAD4B5'
-          },
-        }}>
-          <Tab.Screen 
-          name='Home' 
-          component={Home} 
-          options={{
-            tabBarIcon: ({focused}) => {
-              return (
-                <Ionicons name={ focused ? "home" : "home-outline"} size={30} color={focused ? '#800000' : '#982B1C'} />
-              )
-            },
-          }} 
-          />
-          <Tab.Screen 
-            name='Products'
-            component={Products}
-            options={{
-              tabBarIcon: ({ focused }) => {
-                return (
-                  <Ionicons name={focused ? 'bag-check' : 'bag-check-outline'}size={30} color={focused ? '#800000' : '#982B1C'}/>
-                )
-              }
-            }}
-          />
-          <Tab.Screen 
-            name='Notifications'
-            component={Notifications}
-            options={{
-              tabBarIcon: ({ focused }) => {
-                return <Ionicons name={ focused ? 'notifications' : 'notifications-outline'} size={30} color={focused ? '#800000' : '#982B1C'} />
-              }
-            }}
-          />
-          <Tab.Screen 
-            name='About'
-            component={About}
-            options={{
-              tabBarIcon: ({ focused }) => {
-                return <Ionicons name={ focused ? 'person' : 'person-outline'} size={30} color={focused ? '#800000' : '#982B1C'} />
-              }
-            }}
-          />
-        </Tab.Navigator>
-  )
+    <Tab.Navigator
+      screenOptions={({ route }) => ({
+        headerShown: false,
+        tabBarShowLabel: true,
+        tabBarStyle: {
+          height: 100,
+          borderRadius: 20,
+          paddingVertical: 20,
+          position: "absolute",
+          backgroundColor: '#DAD4B5',
+        },
+        tabBarIcon: ({ focused }) => {
+          let iconName;
+
+          if (route.name === 'Home') {
+            iconName = focused ? 'home' : 'home-outline';
+          } else if (route.name === 'Products') {
+            iconName = focused ? 'bag-check' : 'bag-check-outline';
+          } else if (route.name === 'Notifications') {
+            iconName = focused ? 'notifications' : 'notifications-outline';
+          } else if (route.name === 'About') {
+            iconName = focused ? 'person' : 'person-outline';
+          }
+
+          return (
+            <Ionicons
+              name={iconName}
+              size={30}
+              color={focused ? '#800000' : '#982B1C'}
+            />
+          );
+        },
+        tabBarLabel: ({ focused }) => {
+          let labelColor = focused ? '#800000' : '#982B1C';
+
+          return (
+            <Text style={{ color: labelColor, fontSize: 12 }}>
+              {route.name}
+            </Text>
+          );
+        },
+      })}
+    >
+      <Tab.Screen name='Home' component={Home} />
+      <Tab.Screen name='Products' component={Products} />
+      <Tab.Screen name='Notifications' component={Notifications} />
+      <Tab.Screen name='About' component={About} />
+    </Tab.Navigator>
+  );
 }
