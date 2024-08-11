@@ -7,7 +7,7 @@ export default function Home({ navigation }) {
   const [iconColor, setIconColor] = useState("black");
 
   return (
-    <SafeAreaView style={{flex:1, backgroundColor: 'gold'}}> 
+    <SafeAreaView style={{flex:1, backgroundColor: '#F2E8C6'}}> 
         <View >
         <TouchableOpacity 
          onPressIn={()=> setIconColor('red')}
