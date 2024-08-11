@@ -8,6 +8,7 @@ import Details from '../screens/Details';
 import Notifications from '../screens/Notifications';
 import TabNavigator from './TabNavigator';
 // import { Screen } from 'react-native-screens';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 const Stack = createStackNavigator();
 
