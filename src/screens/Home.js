@@ -1,59 +1,58 @@
-import React, { useState } from 'react';
-import { Image, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import React, {useState} from 'react';
+import {
+  Image,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import Headline from '../components/Headline';
 
 export default function Home() {
-
-  const [iconColor, setIconColor] = useState("black");
+  const [iconColor, setIconColor] = useState('black');
 
   return (
-    <SafeAreaView style={{flex:1, backgroundColor: '#F2E8C6'}}> 
-        {/* <View >
-        <TouchableOpacity 
-         onPressIn={()=> setIconColor('red')}
-         onPressOut={()=> setIconColor('black')}
-         onPress={()=> navigation.navigate('Welcome')} 
-         style={{margin: 10}} >
-          <AntDesign name = 'arrowleft' size={30} color={iconColor} />
-        </TouchableOpacity>
-        </View> */}
-        <View style={style.container}>
-          <Image source={require('../../assets/pexels-xmtnguyen-699953.jpg')} style={style.img} />
-          <Text style={style.headerColor}>Home</Text>
-          <Text>Test One</Text>
-
-          <View style={style.moreButton} >
-     <Text onPress={() => navigation.navigate('Detail')}  >more details</Text>
-     </View>
+    <>
+      <View style={{flex: 1, backgroundColor: '#F2E8C6'}}>
+        <View>
+        <Headline />
+          <View>
+            <Text style={{fontSize: 40}}> Section 01 </Text>
+          </View>
+          <View>
+            <Text style={{fontSize: 40}}> Section 02 </Text>
+          </View>
         </View>
-    </SafeAreaView>
-  )
+
+        <View style={style.moreButton}>
+          <Text onPress={() => navigation.navigate('Detail')}>
+            more details
+          </Text>
+        </View>
+      </View>
+    </>
+  );
 }
 
-
 const style = StyleSheet.create({
-
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
   img: {
-    width: "50%",
+    width: '50%',
     height: undefined,
     aspectRatio: 1,
-  }, 
-  headerColor: {
-    fontWeight: "800",
-        fontSize: 30,
-        color: 'blue',
   },
   moreButton: {
-    borderRadius: 10,
-    color: "red",
+    // flex: 1,
+    borderRadius: 20,
+    color: 'red',
     fontSize: 18,
-    backgroundColor: "cyan",
+    backgroundColor: 'cyan',
     padding: 10,
     paddingTop: 10,
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    marginBottom: 110,
+    marginHorizontal: 100,
   },
-})
+});
