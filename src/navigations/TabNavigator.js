@@ -16,13 +16,15 @@ export default function TabNavigator() {
     <Tab.Navigator
       screenOptions={({ route }) => ({
         headerShown: false,
-        tabBarShowLabel: true,
+        tabBarShowLabel: false,
         tabBarStyle: {
-          height: 100,
-          borderRadius: 20,
-          paddingVertical: 20,
+          // height: 100,
+          borderRadius: 100,
+          // paddingVertical: 10,
+          paddingTop: 20,
           position: "absolute",
           backgroundColor: '#DAD4B5',
+          margin: 20,
         },
         tabBarIcon: ({ focused }) => {
           let iconName;
@@ -40,7 +42,7 @@ export default function TabNavigator() {
           return (
             <Ionicons
               name={iconName}
-              size={30}
+              size={32}
               color={focused ? '#800000' : '#982B1C'}
             />
           );
