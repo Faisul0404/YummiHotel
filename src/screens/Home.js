@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { Image, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
-export default function Home({ navigation }) {
+export default function Home() {
 
   const [iconColor, setIconColor] = useState("black");
 
   return (
     <SafeAreaView style={{flex:1, backgroundColor: '#F2E8C6'}}> 
-        <View >
+        {/* <View >
         <TouchableOpacity 
          onPressIn={()=> setIconColor('red')}
          onPressOut={()=> setIconColor('black')}
@@ -16,7 +16,7 @@ export default function Home({ navigation }) {
          style={{margin: 10}} >
           <AntDesign name = 'arrowleft' size={30} color={iconColor} />
         </TouchableOpacity>
-        </View>
+        </View> */}
         <View style={style.container}>
           <Image source={require('../../assets/pexels-xmtnguyen-699953.jpg')} style={style.img} />
           <Text style={style.headerColor}>Home</Text>
