@@ -9,7 +9,7 @@ export default function SectionOne() {
       <TouchableOpacity onPress={() => alert("alert 01")}>
         <View style={styles.imgContainer}>
           <Image
-            source={require('../../assets/pexels-xmtnguyen-699953.jpg')}
+            source={require('../../assets/prown_gravy.jpg')}
             style={styles.imgStyle}
           />
           <Text style={styles.headline}>Headline</Text>
@@ -19,7 +19,7 @@ export default function SectionOne() {
         <TouchableOpacity onPress={() => alert("alert 02")}>
         <View style={styles.imgContainer}>
           <Image
-            source={require('../../assets/rice-noodles-with-chicken-vegetables.jpg')}
+            source={require('../../assets/rice-noodles.jpg')}
             style={styles.imgStyle}
           />
           <Text style={styles.headline}>Headline</Text>
@@ -29,7 +29,7 @@ export default function SectionOne() {
         <TouchableOpacity onPress={() => alert("alert 03")}>
         <View style={styles.imgContainer}>
           <Image
-            source={require('../../assets/big-sandwich-hamburger-burger-with-beef-red-onion-tomato-fried-bacon.jpg')}
+            source={require(`../../assets/hamburger.jpg`)}
             style={styles.imgStyle}
           />
           <Text style={styles.headline}>Headline</Text>
@@ -39,7 +39,7 @@ export default function SectionOne() {
         <TouchableOpacity onPress={() => alert("alert 04")}>
         <View style={styles.imgContainer}>
           <Image
-            source={require('../../assets/thai-food-noodles-spicy-boil-with-seafood-pork-hot-pot.jpg')}
+            source={require('../../assets/thai-seafood.jpg')}
             style={styles.imgStyle}
           />
           <Text style={styles.headline}>Headline</Text>
