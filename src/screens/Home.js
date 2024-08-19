@@ -9,6 +9,8 @@ import {
 } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Headline from '../components/Headline';
+import SectionOne from '../components/SectionOne';
+import SectionTwo from '../components/SectionTwo';
 
 export default function Home() {
   const [iconColor, setIconColor] = useState('black');
@@ -17,13 +19,9 @@ export default function Home() {
     <>
       <View style={{flex: 1, backgroundColor: '#F2E8C6'}}>
         <View>
-        <Headline />
-          <View>
-            <Text style={{fontSize: 40}}> Section 01 </Text>
-          </View>
-          <View>
-            <Text style={{fontSize: 40}}> Section 02 </Text>
-          </View>
+          <Headline />
+          <SectionOne />
+          <SectionTwo />
         </View>
 
         <View style={style.moreButton}>
