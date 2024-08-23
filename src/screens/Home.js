@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {
   Image,
   SafeAreaView,
+  ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -19,12 +20,14 @@ export default function Home() {
   return (
     <>
       <View style={{flex: 1, backgroundColor: '#F2E8C6'}}>
-        <View>
-          <Headline />
-          <SectionOne />
-          <SectionTwo />
-          <SectionThree />
-        </View>
+        <Headline />
+        <SectionOne />
+        <ScrollView>
+          <View>
+            <SectionTwo />
+            <SectionThree />
+          </View>
+        </ScrollView>
 
         <View style={style.moreButton}>
           <Text onPress={() => navigation.navigate('Detail')}>
