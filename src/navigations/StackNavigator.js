@@ -7,14 +7,15 @@ import About from '../screens/About';
 import Details from '../screens/Details';
 import Notifications from '../screens/Notifications';
 import TabNavigator from './TabNavigator';
-// import { Screen } from 'react-native-screens';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import SectionTwoDetailsView from '../screens/SectionTwoDetailsView';
+
+
 
 const Stack = createStackNavigator();
 
 function StackNavigator() {
   return (
-    <Stack.Navigator screenOptions={{headerShown: false}}>
+    <Stack.Navigator screenOptions={{headerShown: false}} initialRouteName="Welcome" >
         <Stack.Screen name='Welcome' component={Welcome} />
         <Stack.Screen name='Home' component={Home} />
         <Stack.Screen name='Products' component={Products} />
@@ -22,6 +23,7 @@ function StackNavigator() {
         <Stack.Screen name='Detail' component={Details} />
         <Stack.Screen name='Notification' component={Notifications} />
         <Stack.Screen name='TabNavigator' component={TabNavigator} />
+        <Stack.Screen name='SectionTwoDetails' component={SectionTwoDetailsView} />
     </Stack.Navigator>
   )
 }
