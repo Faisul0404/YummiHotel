@@ -5,59 +5,70 @@ import {
   Image,
   TouchableOpacity,
   Alert,
+  ScrollView
 } from 'react-native';
 import React from 'react';
-import {ScrollView} from 'react-native-gesture-handler';
+import { useNavigation } from '@react-navigation/native';
 
 const SectionOneData = [
   {
     id: '01',
     headline: 'Product 01',
-    tagline: 'About the product 01',
+    tagline: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages',
     img: require('../../assets/hamburger.jpg'),
+    sizes: ['XS', 'S', 'M', 'L'],
   },
   {
     id: '02',
     headline: 'Product 02',
-    tagline: 'About the product 02',
+    tagline: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages',
     img: require('../../assets/prown_gravy.jpg'),
+    sizes: ['XS', 'S', 'M', 'L'],
   },
   {
     id: '03',
     headline: 'Product 03',
-    tagline: 'About the product 03',
+    tagline: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages',
     img: require('../../assets/hamburger.jpg'),
+    sizes: ['XS', 'S', 'M', 'L'],
   },
   {
     id: '04',
     headline: 'Product 04',
-    tagline: 'About the product 04',
+    tagline: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages',
     img: require('../../assets/thai-seafood.jpg'),
+    sizes: ['XS', 'S', 'M', 'L'],
   },
   {
     id: '05',
     headline: 'Product 05',
-    tagline: 'About the product 05',
+    tagline: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages',
     img: require('../../assets/rice-noodles.jpg'),
+    sizes: ['XS', 'S', 'M', 'L'],
   },
   {
     id: '06',
     headline: 'Product 06',
-    tagline: 'About the product 06',
+    tagline: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages',
     img: require('../../assets/hamburger.jpg'),
+    sizes: ['XS', 'S', 'M', 'L'],
   },
 ];
 
 export default function SectionOne() {
+
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         {SectionOneData.map(item => (
-          <TouchableOpacity key={item.id} onPress={() => alert(item.id)}>
+          <TouchableOpacity key={item.id} onPress={() => navigation.navigate('Detail', { item } )}>
             <View style={styles.imgContainer}>
               <Image source={item.img} style={styles.imgStyle} />
               <Text style={styles.headline}>{item.headline}</Text>
-              <Text>{item.tagline}</Text>
+              {/* <Text>Sizes: {item.sizes.join(', ')}</Text> */}
+              {/* <Text>{item.tagline}</Text> */}
             </View>
           </TouchableOpacity>
         ))}

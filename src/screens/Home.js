@@ -23,10 +23,10 @@ export default function Home() {
         <Headline />
         <SectionOne />
         <ScrollView>
-          <View>
+          {/* <View> */}
             <SectionTwo />
-            <SectionThree />
-          </View>
+            {/* <SectionThree /> */}
+          {/* </View> */}
         </ScrollView>
 
         <View style={style.moreButton}>
